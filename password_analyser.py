@@ -1,6 +1,7 @@
 def password_strength(password):
     score=0
 
+#declaring flags
     has_upper=False
     has_lower=False
     has_digit=False
