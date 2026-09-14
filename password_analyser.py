@@ -8,6 +8,8 @@ def password_strength(password):
     has_special=False
     has_repeat=False
 
+#checking if the password has the required conditions 
+
     for char in password:
 
         if char.isupper() :
@@ -22,10 +24,14 @@ def password_strength(password):
         if not char.isalpha() and not char.isdigit() :
             has_special=True
 
+#loop to check if a character is repeated in password 
+
         for i in range(1,len(password)):
             if password[i]==password[i-1]:
                 has_repeat=True
                 break
+
+#updating the score acc to the conditions 
 
         if len(password)>=8:
             score+=1
@@ -41,6 +47,8 @@ def password_strength(password):
 
         if has_special:
             score+=1
+
+#declaring the strength of password 
 
         if score<=2:
             strength="Weak"
